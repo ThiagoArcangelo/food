@@ -2,6 +2,7 @@ import { Header } from "../components/header";
 import { View, StyleSheet, ScrollView,  } from "react-native";
 
 import Constants from "expo-constants"
+import { Banner } from "../components/banner";
 
 const statusBarHeight = Constants.statusBarHeight; // Através da importação de Contants fornece a altura da StatusBar conforme o dispositivo, 
 
@@ -11,8 +12,9 @@ export default function Index() {
     showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
         <Header />
-      </View>
 
+        <Banner />
+      </View>
     </ScrollView>
   );
 }
