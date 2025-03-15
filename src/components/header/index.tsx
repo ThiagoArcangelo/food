@@ -3,21 +3,20 @@ import { Ionicons, Feather } from "@expo/vector-icons"
 
 export function Header() {
     return (
-      <View style={styles.container} className='text-slate-800'>
-        <Pressable style={styles.menu}>
+      <View style={styles.container} className='gap-1'>
+        <Pressable style={styles.click}>
             <Ionicons name="menu" size={20} color="#121212" />        
         </Pressable>
 
         <View style={styles.localizacao}>
             <Text>Localização</Text>
-
-            <View style={styles.cidade}>
+            <View style={styles.bell}>
                 <Feather name="map-pin" size={14} color="#ff0000"/>
                 <Text>Campo Grande</Text>
             </View>
         </View>
 
-        <Pressable style={styles.bell}>
+        <Pressable style={styles.click}>
             <Feather name="bell" size={20} color="#121212" />
         </Pressable>
       </View>
@@ -26,13 +25,14 @@ export function Header() {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: "#fef2f2",
         width: "100%",
-        flex: 1,
-        flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+        flex: 1,
+        flexDirection: "row",
     },
-    menu: {
+    click: {
         width: 40,
         height: 40,
         backgroundColor: "#ffffff",
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     localizacao: {
-        // flex: 1,
+        flex: 1,
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -59,16 +59,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         gap: 4,
-    },
-    nomeCidade: {
-        fontSize: 18,
-        lineHeight: 28,
-        fontWeight: '700',
-        color: "#1e293b"
-    },
-    labelLocalizacao: {
-        textAlign: "center",
-        fontSize: 14,
-        lineHeight: 20,
     }
 });
