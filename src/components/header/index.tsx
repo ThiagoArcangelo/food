@@ -3,20 +3,21 @@ import { Ionicons, Feather } from "@expo/vector-icons"
 
 export function Header() {
     return (
-      <View style={styles.container} className='gap-1'>
-        <Pressable style={styles.click}>
+      <View style={styles.container} className='flex-row items-center justify-center'>
+        <Pressable style={styles.menu}>
             <Ionicons name="menu" size={20} color="#121212" />        
         </Pressable>
 
         <View style={styles.localizacao}>
-            <Text>Localização</Text>
-            <View style={styles.bell}>
+            <Text style={styles.textLocal}>Localização</Text>
+
+            <View style={styles.pinContainer}>
                 <Feather name="map-pin" size={14} color="#ff0000"/>
-                <Text>Campo Grande</Text>
+                <Text style={styles.cidade}>Campo Grande</Text>
             </View>
         </View>
 
-        <Pressable style={styles.click}>
+        <Pressable style={styles.sino}>
             <Feather name="bell" size={20} color="#121212" />
         </Pressable>
       </View>
@@ -25,22 +26,13 @@ export function Header() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#fef2f2",
         width: "100%",
-        alignItems: "center",
-        justifyContent: "space-between",
         flex: 1,
         flexDirection: "row",
-    },
-    click: {
-        width: 40,
-        height: 40,
-        backgroundColor: "#ffffff",
-        borderRadius: 9999,
-        justifyContent: "center",
         alignItems: "center",
+        justifyContent: "space-between",
     },
-    bell: {
+    menu: {
         width: 40,
         height: 40,
         backgroundColor: "#ffffff",
@@ -54,10 +46,29 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
-    cidade: {
+    textLocal: {
+        textAlign: "center",
+        fontSize: 14,
+        lineHeight: 20,
+    },
+    pinContainer: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
         gap: 4,
-    }
+    },
+    cidade: {
+        fontSize: 18,
+        lineHeight: 18,
+        fontWeight: 700,
+        color: "#335145",
+    },
+    sino: {
+        width: 40,
+        height: 40,
+        backgroundColor: "#ffffff",
+        borderRadius: 9999,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });
