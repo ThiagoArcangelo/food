@@ -5,6 +5,7 @@ import { Banner } from "../components/banner";
 import { Header } from "../components/header";
 import { Search } from "../components/search";
 import { Section } from "../components/Section";
+import { TrendingFoods } from "../components/trending";
 
 const statusBarHeight = Constants.statusBarHeight; // Através da importação de Contants fornece a altura da StatusBar conforme o dispositivo, 
 
@@ -22,6 +23,7 @@ export default function Index() {
           size = "pequeno"
           action={() => console.log("Clicou no veja mais....")}
         />
+        <TrendingFoods />
       </View>
     </ScrollView>
   );
