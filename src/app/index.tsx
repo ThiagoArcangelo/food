@@ -6,12 +6,14 @@ import { Header } from "../components/header";
 import { Search } from "../components/search";
 import { Section } from "../components/Section";
 import { TrendingFoods } from "../components/trending";
+import { Restaurants } from "../components/restaurants";
+import { RestaurantVerticalList } from '../components/list';
 
 const statusBarHeight = Constants.statusBarHeight; // Através da importação de Contants fornece a altura da StatusBar conforme o dispositivo, 
 
 export default function Index() {
   return (
-    <ScrollView style={styles.container} 
+    <ScrollView className="text-xl" style={styles.container} 
     showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
         <Header />
@@ -24,6 +26,24 @@ export default function Index() {
           action={() => console.log("Clicou no veja mais....")}
         />
         <TrendingFoods />
+
+        <Section 
+          name = "Famosos no DevFood"
+          label = "Veja todos"
+          size = "pequeno"
+          action={() => console.log("Clicou no Famosos")}
+        />
+
+        <Restaurants />
+
+        <Section 
+          name = "Restaurantes"
+          label = "Veja todos"
+          size = "pequeno"
+          action={() => console.log("Clicou no Restaurantes")}
+        />
+
+        <RestaurantVerticalList />
       </View>
     </ScrollView>
   );
